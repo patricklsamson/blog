@@ -1,0 +1,32 @@
+<%= form_with model: @article do |f| %>
+  <div>
+    <% if @article.errors.any? %>
+      <ul>
+        <% @article.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+
+  <div>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :body %><br />
+    <%= f.text_field :body %>
+  </div>
+
+  <div>
+    <%= f.label :status %><br />
+    <%= f.select :status, ['public', 'private', 'archived'],
+                          selected: 'public' %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+    <%= link_to 'Back', root_path %>
+  </div>
+<% end %>
