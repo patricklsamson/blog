@@ -1,8 +1,12 @@
-<p><strong>Name:</strong> <%= comment.name %></p>
-<p><strong>Comment:</strong> <%= comment.body %></p>
+<div class="card mb-3">
+  <div class="card-body">
+    <p><%= comment.body %></p>
+    <p><%= comment.name %></p>
 
-<p>
-  <%= link_to 'Delete Comment', [comment.article, comment],
+    <p>
+      <%= link_to 'Delete Comment', [comment.article, comment],
               method: :delete,
               data: { confirm: 'Are you suure?' } %>
-</p>
+    </p>
+  </div>
+</div>
