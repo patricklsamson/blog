@@ -1,18 +1,39 @@
-<div class="container">
-  <h1><%= @article.name %></h1>
-  <p><%= @article.body %></p>
+<%= provide(:page_title, @article.title) %>
+<%= provide(:blog_active, 'active') %>
 
-  <ul>
-    <li><%= link_to 'Edit', edit_article_path(@article) %></li>
-    <li><%= link_to 'Delete', article_path(@article),
+<div class="text-end">
+  <%= link_to 'Edit', edit_article_path(@article) %> |
+  <%= link_to 'Delete', article_path(@article),
                   method: :delete,
-                  data: { confirm: 'Are you sure?' } %></li>
-    <li><%= link_to 'Back', root_path %></li>
-  </ul>
+                  data: { confirm: 'Are you sure?' } %>
+</div>
 
-  <h2>Comments</h2>
-  <%= render @article.comments %>
+<h1><%= @article.title %></h1>
+<p class="text-end"><%= @article.publish_time %></p>
 
-  <h2>Add a comment:</h2>
-  <%= render 'comments/form' %>
+<% if @article.banner_photo_url.size > 5 %>
+  <img src="<%= @article.banner_photo_url %>" alt="Banner photo" class="card-img-top">
+<% end %>
+
+<p class="mt-3"><%= @article.body %></p>
+
+<div class="card mb-4">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-6">
+        <h3 class="card-title">Comments</h3>
+
+        <% if @article.comments.count == 0 %>
+          <p>No comments yet.</p>
+        <% end %>
+
+        <%= render @article.comments %>
+      </div>
+
+      <div class="col-md-6">
+        <h5>Add a comment:</h5>
+        <%= render 'comments/form' %>
+      </div>
+    </div>
+  </div>
 </div>
