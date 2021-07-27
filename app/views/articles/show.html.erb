@@ -9,7 +9,7 @@
 </div>
 
 <h1><%= @article.title %></h1>
-<p class="text-end"><%= @article.publish_time %></p>
+<p class="text-end"><%= @article.timestamp %></p>
 
 <% if @article.banner_photo_url.size > 5 %>
   <img src="<%= @article.banner_photo_url %>" alt="Banner photo" class="card-img-top">
@@ -21,7 +21,7 @@
   <div class="card-body">
     <div class="row">
       <div class="col-md-6">
-        <h3 class="card-title">Comments</h3>
+        <h3 class="card-title">Comments(<%= Comment.public_count %>)</h3>
 
         <% if @article.comments.count == 0 %>
           <p>No comments yet.</p>
