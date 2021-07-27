@@ -8,7 +8,7 @@ class Article < ApplicationRecord
     title_changed?
   end
 
-  def publish_time
+  def timestamp
     "Published #{created_at.strftime('%I:%M %p')} #{created_at.strftime('%b %-d, %Y')}"
   end
 
