@@ -9,8 +9,11 @@ module Visible
 
   class_methods do
     def public_count
-      count = where(status: 'Public').count
-      "#{count} #{count > 1 ? 'articles' : 'article'}"
+      where(status: 'Public').count
+    end
+
+    def archived_count
+      where(status: 'Archived').count
     end
   end
 
