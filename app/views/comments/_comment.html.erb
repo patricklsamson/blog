@@ -1,12 +1,13 @@
 <div class="card mb-3">
   <div class="card-body">
-    <p><%= comment.body %></p>
-    <p><%= comment.name %></p>
+    <p><q><%= comment.body %></q></p>
+    <p class="text-end mb-0">- <%= comment.name %></p>
+    <p class="text-end"><%= comment.timestamp %></p>
 
     <p>
       <%= link_to 'Delete Comment', [comment.article, comment],
               method: :delete,
-              data: { confirm: 'Are you suure?' } %>
+              data: { confirm: 'Are you suure?' }, class: "btn btn-danger" %>
     </p>
   </div>
 </div>
