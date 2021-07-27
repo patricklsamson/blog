@@ -2,8 +2,7 @@
 <%= provide(:blog_active, 'active') %>
 
 <%= link_to 'New Article', new_article_path, class: "float-end btn btn-outline-dark" %>
-<h1>Articles</h1>
-<p>This blog has <%= Article.public_count %>.</p>
+<h1>Articles(<%= Article.public_count %>)</h1>
 
 <div class="row">
   <% @articles.each do |article| %>
