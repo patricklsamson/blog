@@ -26,8 +26,8 @@
 
   <div>
     <%= f.label :status %><br />
-    <%= f.select :status, ['Public', 'Archived'], 
-                          selected: 'Public' %>
+    <%= f.select :status, options_for_select(['Public', 'Archived'], selected: 'Public'),
+                          {}, class: 'form-select' %>
   </div>
 
   <div class="mt-3">
