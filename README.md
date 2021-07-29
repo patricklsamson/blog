@@ -4,7 +4,7 @@ This rails project is a part of my compilation of Avion School Batch 8 Activitie
 
 ## Practice
 
-1. [Creating a New Rails App](https://github.com/patricklsamson/blog)
+1. Creating a New Rails App
 1. [Adding Model and its Validations](https://github.com/patricklsamson/blog/blob/main/app/models/article.rb)
 1. [Adding Edit, Update, and Delete Actions in Controller](https://github.com/patricklsamson/blog/blob/main/app/controllers/articles_controller.rb)
 
