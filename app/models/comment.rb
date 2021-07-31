@@ -3,7 +3,6 @@ class Comment < ApplicationRecord
     "Published #{created_at.strftime('%I:%M %p')} #{created_at.strftime('%b %-d, %Y')}"
   end
 
-  include Visible
   belongs_to :article
 
   validates :name, presence: true
