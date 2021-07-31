@@ -9,12 +9,6 @@
     <%= f.label :body %>
   </div>
 
-  <div>
-    <%= f.label :status %><br />
-    <%= f.select :status, options_for_select(['Public', 'Archived'], selected: 'Public'),
-                          {}, class: 'form-select' %>
-  </div>
-
   <div class="mt-3">
     <%= f.submit class: "btn btn-success" %>
   </div>
