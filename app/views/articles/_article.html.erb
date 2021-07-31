@@ -1,14 +1,20 @@
 <div class="col-lg-4 col-sm-6 mb-3">
   <div class="card">
-    <% if article.banner_photo_url.size > 5 %>
-      <img src="<%= article.banner_photo_url %>" alt="Banner photo" class="card-img-top">
-    <% end %>
+    <div class="row g-0">
+      <div class="col-sm-12 col-6">
+        <% if article.banner_photo_url.size > 5 %>
+          <img src="<%= article.banner_photo_url %>" alt="Banner photo" class="card-img-top">
+        <% end %>
+      </div>
 
-    <div class="card-body">
-      <h5 class="card-title"><%= article.title %></h5>
-      <p><%= article.timestamp %></p>
-      <p class="card-text"><%= truncate(article.body, length: 50) %></p>
-      <%= link_to 'See More', article, class: "btn btn-info float-end" %>
+      <div class="col-sm-12 col-6">
+        <div class="card-body">
+          <h5 class="card-title"><%= article.title %></h5>
+          <p><%= article.timestamp %></p>
+          <p class="card-text"><%= truncate(article.body, length: 50) %></p>
+          <%= link_to 'See More', article, class: "btn btn-info float-end" %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
