@@ -6,10 +6,6 @@ class ArticlesController < ApplicationController
     @articles = Article.most_recent
   end
 
-  def show
-    @article = Article.friendly.find(params[:id])
-  end
-
   def new
     @article = Article.new
   end
@@ -22,6 +18,10 @@ class ArticlesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @article = Article.friendly.find(params[:id])
   end
 
   def edit
