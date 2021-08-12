@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @article = Article.friendly.find(params[:article_id])
-    @comment = @article.comments.friendly.find(params[:id])
+    @comment = @article.comments.find(params[:id])
     @comment.destroy
     redirect_to article_path(@article)
   end
