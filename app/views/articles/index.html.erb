@@ -1,8 +1,9 @@
 <%= provide(:page_title, 'All Articles') %>
 <%= provide(:blog_active, 'active') %>
 
-<%= link_to 'New Article', new_article_path, class: "float-end btn btn-outline-dark" %>
-<h1>Articles(<%= Article.public_count %>)</h1>
+<%= link_to 'New Article', new_article_path, class: "float-end btn btn-outline-dark" if user_signed_in? %>
+
+<h1 class="mb-4">Articles (<%= Article.public_count %>)</h1>
 
 <div class="row">
   <% @articles.each do |article| %>
