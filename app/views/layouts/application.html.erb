@@ -17,6 +17,12 @@
 
     <main>
       <div class="container <%= controller_name %> <%= action_name %>">
+        <% if notice %>
+          <p class="notice alert alert-info"><%= notice %></p>
+        <% elsif alert %>
+          <p class="alert alert-warning"><%= alert %></p>
+        <% end %>
+
         <%= yield %>
       </div>
     </main>
