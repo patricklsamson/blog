@@ -1,13 +1,20 @@
 <div class="card mb-3">
   <div class="card-body">
-    <p><q><%= comment.body %></q></p>
-    <p class="text-end mb-0">- <%= comment.name %></p>
-    <p class="text-end"><%= comment.timestamp %></p>
+    <div class="card mb-2">
+      <div class="card-body">
+        <p class="mb-0"><q><%= comment.body %></q></p>
+      </div>
+    </div>
 
-    <p>
-      <%= link_to 'Delete Comment', [comment.article, comment],
-              method: :delete,
-              data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
-    </p>
+    <% if comment.user == current_user %>
+      <div class="float-start">
+        <%= link_to 'Delete', [comment.article, comment],
+                method: :delete,
+                data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+      </div>
+    <% end %>
+
+    <p class="text-end mb-0">- <%= comment.user.username %></p>
+    <p class="text-end"><%= comment.timestamp %></p>
   </div>
 </div>
