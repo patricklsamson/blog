@@ -1,5 +1,9 @@
 <%= provide(:page_title, "Edit #{@article.title}") %>
 <%= provide(:blog_active, 'active') %>
 
-<h1>Edit Article</h1>
-<%= render 'form', article: @article %>
+<div class="row justify-content-center">
+  <div class="col-sm-8 col-md-7">
+    <h1>Edit Article</h1>
+    <%= render 'form', article: @article %>
+  </div>
+</div>
