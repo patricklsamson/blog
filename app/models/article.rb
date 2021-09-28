@@ -1,4 +1,6 @@
 class Article < ApplicationRecord
+  belongs_to :user
+
   extend FriendlyId
   friendly_id :title, use: :slugged
 
@@ -9,7 +11,7 @@ class Article < ApplicationRecord
   end
 
   def timestamp
-    "Published #{created_at.strftime('%I:%M %p')} #{created_at.strftime('%b %-d, %Y')}"
+    "Published by #{user.username} at #{created_at.strftime('%I:%M %p')} #{created_at.strftime('%b %-d, %Y')}"
   end
 
   include Visible
