@@ -24,10 +24,16 @@
     <%= f.label :body %>
   </div>
 
-  <div>
+  <div class="w-50">
     <%= f.label :status %><br />
-    <%= f.select :status, options_for_select(['Public', 'Archived'], selected: 'Public'),
-                          {}, class: 'form-select' %>
+
+    <% if @article.archived? %>
+      <%= f.select :status, options_for_select(['Public', 'Archived'], selected: 'Archived'),
+                            {}, class: 'form-select' %>
+    <% else %>
+      <%= f.select :status, options_for_select(['Public', 'Archived'], selected: 'Public'),
+                            {}, class: 'form-select' %>
+    <% end %>
   </div>
 
   <div class="mt-3">
