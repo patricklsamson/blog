@@ -1,8 +1,8 @@
 class ArticlesController < ApplicationController
-  http_basic_authenticate_with name: 'admin', password: 'admin',
-                               except: %i[index show]
+  before_action :authenticate_user!, except: %i[index show]
 
   def index
+    session[:action] = 'index'
     @articles = Article.most_recent
   end
 
