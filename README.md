@@ -64,7 +64,7 @@ rails db:seed
 
 or
 
-rails db:setup
+rails db:setup (skip "rails db:create")
 ```
 
 ## Deployment Instructions
