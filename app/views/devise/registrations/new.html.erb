@@ -11,6 +11,11 @@
       </div>
 
       <div class="field form-floating mb-3">
+        <%= f.email_field :username, class: "form-control", placeholder: "Username" %>
+        <%= f.label :username %>
+      </div>
+
+      <div class="field form-floating mb-3">
         <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "Password" %>
 
         <%= f.label :password do %>
