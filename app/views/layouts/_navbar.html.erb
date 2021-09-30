@@ -28,8 +28,6 @@
               <li><%= link_to 'Log Out', destroy_user_session_path, class: "dropdown-item" %></li>
             </ul>
           </li>
-
-
         <% else %>
           <% if controller_name == 'sessions' && action_name == 'new' %>
             <li class="nav-item">
