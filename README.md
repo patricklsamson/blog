@@ -27,7 +27,7 @@ Things you may want to cover:
 
 This rails project is a part of my compilation of Avion School Batch 8 Activities. It is focused on familiarizing the fundamentals of Ruby on Rails especially how it was separated into three components Model-View-Controller (MVC). It is deployed on Heroku and can be accessed through this [link](https://patricklsamson-blog.herokuapp.com/).
 
-Note: Kindly check "db/seeds.rb" for initial data to assist you in exploring around the app.
+Note: Kindly check "[db/seeds.rb](https://github.com/patricklsamson/blog/blob/main/db/seeds.rb)" for initial data to assist you in exploring around the app.
 
 ---
 
