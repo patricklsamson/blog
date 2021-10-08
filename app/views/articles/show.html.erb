@@ -48,11 +48,17 @@
         <%= render @article.comments %>
       </div>
 
-      <div class="col-md-6">
-        <% if user_signed_in? %>
-          <h5 class="mb-4">Add a comment:</h5>
-          <%= render 'comments/form' %>
-        <% end %>
+      <div class="col-md-6 d-flex align-items-center">
+        <div class="card w-100">
+          <div class="card-body">
+            <% if user_signed_in? %>
+              <h5 class="mb-4">Add a comment:</h5>
+              <%= render 'comments/form' %>
+            <% else %>
+              Please <%= link_to 'login', new_user_session_path %> to add a comment.
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
